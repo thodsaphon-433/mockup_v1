@@ -1,0 +1,56 @@
+{
+  "apps": [{
+    "exec_mode": "fork",
+    "instances": 1,
+    "script": "index.js",
+    "name": "Mockup_AEMF",
+    "interpreter": "node",
+    "env": {
+      "node_name": "Mockup_AEMF",
+      "app_host": "0.0.0.0",
+      "app_port": "8989",
+      "iss": "srf.ais.co.th/aemf",
+      "use_https": false,
+      "key": "key1.pem",
+      "cert": "cert1.pem",
+      "service": {
+        "mongo": {
+          "default": {
+            "conn_type": "mongodb",
+            "url": "127.0.0.1:27017",
+            "dbname": "aemf"
+          }
+        }
+      },
+      "log": {
+        "applog": {
+          "path": "./logs/appLog/",
+          "level": "debug",
+          "console": true,
+          "file": true,
+          "rotation_time": 60
+        },
+        "summary": {
+          "path": "./logs/summary/",
+          "console": false,
+          "file": true,
+          "rotation_time": 60
+        },
+        "detail": {
+          "path": "./logs/detail/",
+          "console": false,
+          "file": true,
+          "rotation_time": 60
+        },
+        "stat": {
+          "path": "./logs/stat/",
+          "console": false,
+          "file": true,
+          "rotation_time": 60,
+          "statInterval": 1,
+          "mode": 0
+        }
+      }
+    }
+  }]
+}

@@ -1,0 +1,14 @@
+logs/*
+node_modules
+.DS_Store
+.vscode/*
+server/data/tmp
+*.swp
+*.out
+npm-debug.log
+package-lock.json
+deploy
+stat.db
+*.tar.gz
+log
+test.js
