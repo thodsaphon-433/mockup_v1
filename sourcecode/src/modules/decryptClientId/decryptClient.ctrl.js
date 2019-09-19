@@ -53,7 +53,7 @@ exports.decryptClient = function (req, res) {
     appLog.debug('raw headers : ', JSON.stringify(req.rawHeaders))
 
     const ret = {
-      resultCode: '200001',
+      resultCode: '20000',
       developerMessage: 'success',
       appName: 'AISPLAYBOX',
       platformName: 'iOS',

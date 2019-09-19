@@ -1,7 +1,7 @@
 /* ------------- [START SERVER CONFIG VARIABLES] ------------ */
 var config = {
   development: {
-    node_name: 'AEMF',
+    node_name: 'MOCKUP_AEMF',
     app_host: '0.0.0.0',
     app_port: '8989',
     use_https: false,

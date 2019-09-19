@@ -23,7 +23,7 @@ exports.message = function (req, res) {
   /**  ========================== [END VALIABLE] ========================== */
 
   /**  ========================== [START LOG] ========================== */
-  appLog.info('==========> messages V3 proccessing <==========')
+  appLog.info('==========> messages proccessing <==========')
   // const identity = `${Xsession}:${Xrtid}:${Xtid}`
   const session = `${Xsession}:${Xrtid}:`
   const summary = logg.summary(session, '', conf.cmd, '')

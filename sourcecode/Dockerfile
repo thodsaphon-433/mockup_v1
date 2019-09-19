@@ -7,7 +7,7 @@ ADD package.json .
 ADD . /app/mockup
 
 RUN npm install -g pm2
-RUN npm install sqlite3 --save
+# RUN npm install sqlite3 --save
 RUN npm install
 
 EXPOSE 8989

@@ -1,7 +1,7 @@
 const cfg = require('./config').get(process.env.node_env)
 
-let conf = {}
-conf.projectName = 'ADMD-' + cfg.node_name // project name
+const conf = {}
+conf.projectName = cfg.node_name // project name
 
 // Enable appLog
 conf.log = {}
