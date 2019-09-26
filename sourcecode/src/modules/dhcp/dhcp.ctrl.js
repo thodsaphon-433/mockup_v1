@@ -4,6 +4,7 @@ const constResultCode = require('../../constants/resultCode.const')
 const httpResponse = require('../../utils/httpUtil').httpResponse
 const httpResponseXml = require('../../utils/httpUtil').httpResponseXml
 const stat = require('../../constants/stat.const')
+// var convert = require('xml-js')
 // const genUtil = require('../../utils/genUtil')
 
 exports.dhcp = function (req, res) {
@@ -13,7 +14,7 @@ exports.dhcp = function (req, res) {
 
   const conf = {
     nodeName: 'mockup',
-    cmd: 'loginByB2C',
+    cmd: 'DHCP',
     requ: 'CLIENT'
   }
 
@@ -57,7 +58,7 @@ exports.dhcp = function (req, res) {
                     '<ns2:queryByIpAddressResponse xmlns:ns2="http://ws.fbb.ais.co.th/">' +
                       '<return>' +
                         '<customerInfo>' +
-                          '<customerId>8812345678</customerId>' +
+                          '<customerId>881234567;8</customerId>' +
                           '<customerName>QAtest@ais.co.th</customerName>' +
                           '<customerStatus>ACTIVE</customerStatus>' +
                           '<latitude>0</latitude>' +
@@ -95,48 +96,51 @@ exports.dhcp = function (req, res) {
                   '</soap:Body>' +
                 '</soap:Envelope>'
 
-    // var ret = {'Body': {
-    //   'queryByIpAddressResponse': {
-    //      'return': {
-    //         'customerInfo': {
-    //            'customerId': '8850002795',
-    //            'customerName': 'QAtest@ais.co.th',
-    //            'customerStatus': 'ACTIVE',
-    //            'latitude': '0',
-    //            'longitude': '0',
-    //            'onlineStatus': 'Online',
-    //            'password': '1234',
-    //            'qosProfileId': 'L200',
-    //            'qosProfileName': '100/100'
-    //         },
-    //         'deviceInfo': [],
-    //         'dslInfo': [],
-    //         'fttxInfo': [],
-    //         'onlineInfo': {
-    //            'acctInputOctets': '1291460452',
-    //            'acctInputPackets': '4101338',
-    //            'acctInterimTime': '1474-02-11 17:31:28.185838',
-    //            'acctOutputOctets': '2155400923',
-    //            'acctOutputPackets': '3799656',
-    //            'acctSessionId': 'FBB_TTC04201300000000d63ff0010472',
-    //            'acctSessionTime': '687600',
-    //            'acctStartTime': '1474-02-03 18:31:41.354217',
-    //            'acctStatusType': '3',
-    //            'acctTerminationCause': '0',
-    //            'callingStationId': 'fc:4d:d4:f4:65:62',
-    //            'customerId': '8850002795',
-    //            'framedIpAddress': '10.104.146.81',
-    //            'nasId': 'FBB_TTC_BRAS',
-    //            'nasIpAddress': '10.104.140.70',
-    //            'nasPortId': 'FBB_TTC_BRAS eth 0/4/2/1:3000',
-    //            'onlineCause': 'SUCCESS'
-    //         },
-    //         'wifiInfo': []
-    //       }
+    // var retObj = { Body: {
+    //   queryByIpAddressResponse: {
+    //     return: {
+    //       customerInfo: {
+    //         customerId: '8850002795',
+    //         customerName: 'QAtest@ais.co.th',
+    //         customerStatus: 'ACTIVE',
+    //         latitude: '0',
+    //         longitude: '0',
+    //         onlineStatus: 'Online',
+    //         password: '1234',
+    //         qosProfileId: 'L200',
+    //         qosProfileName: '100/100'
+    //       },
+    //       deviceInfo: [],
+    //       dslInfo: [],
+    //       fttxInfo: [],
+    //       onlineInfo: {
+    //         acctInputOctets: '1291460452',
+    //         acctInputPackets: '4101338',
+    //         acctInterimTime: '1474-02-11 17:31:28.185838',
+    //         acctOutputOctets: '2155400923',
+    //         acctOutputPackets: '3799656',
+    //         acctSessionId: 'FBB_TTC04201300000000d63ff0010472',
+    //         acctSessionTime: '687600',
+    //         acctStartTime: '1474-02-03 18:31:41.354217',
+    //         acctStatusType: '3',
+    //         acctTerminationCause: '0',
+    //         callingStationId: 'fc:4d:d4:f4:65:62',
+    //         customerId: '8850002795',
+    //         framedIpAddress: '10.104.146.81',
+    //         nasId: 'FBB_TTC_BRAS',
+    //         nasIpAddress: '10.104.140.70',
+    //         nasPortId: 'FBB_TTC_BRAS eth 0/4/2/1:3000',
+    //         onlineCause: 'SUCCESS'
+    //       },
+    //       wifiInfo: []
     //     }
     //   }
     // }
-    // ret = JSON.stringify(ret)
+    // }
+    // retObj = JSON.stringify(retObj)
+    // var options = { compact: true, ignoreComment: true, spaces: 4 }
+    // var result = convert.json2xml(retObj, options)
+    // console.log(result)
 
     res.req = req
     appLog.stat(stat.retResSuc(conf.cmd))

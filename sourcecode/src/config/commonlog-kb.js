@@ -24,6 +24,7 @@ conf.detail.time = cfg.log.detail.rotation_time
 conf.detail.path = cfg.log.detail.path
 conf.detail.console = cfg.log.detail.console
 conf.detail.file = cfg.log.detail.file
+conf.detail.rawData = cfg.log.detail.rawData
 
 // Enable stat
 conf.stat = {}

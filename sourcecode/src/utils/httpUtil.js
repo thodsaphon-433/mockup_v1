@@ -45,7 +45,7 @@ exports.httpResponseXml = (res, resultCode, nodename, cmd, dataRes, summary, det
       'X-Rtid': res.req.xrtid || undefined,
       'X-Tid': res.req.xtid || undefined
     },
-    body: ret,
+    // body: JSON.stringify(ret),
     url: ''
   })
   detail.end()
