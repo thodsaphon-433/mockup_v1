@@ -58,7 +58,7 @@ exports.dhcp = function (req, res) {
                     '<ns2:queryByIpAddressResponse xmlns:ns2="http://ws.fbb.ais.co.th/">' +
                       '<return>' +
                         '<customerInfo>' +
-                          '<customerId>881234567;8</customerId>' +
+                          '<customerId>8812345678@playbox.co.th</customerId>' +
                           '<customerName>QAtest@ais.co.th</customerName>' +
                           '<customerStatus>ACTIVE</customerStatus>' +
                           '<latitude>0</latitude>' +
