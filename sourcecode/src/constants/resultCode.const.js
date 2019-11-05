@@ -39,6 +39,11 @@ module.exports = Object.freeze({
     resultCode: '40300',
     developerMessage: 'missing_or_invalid_parameter'
   },
+  40301: {
+    httpStatus: 403,
+    resultCode: '40301',
+    developerMessage: 'data_exist'
+  },
   40311: {
     httpStatus: 403,
     resultCode: '40311',

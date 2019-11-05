@@ -3,7 +3,7 @@
 		"message":["/message", "/mockup"],
 		"callAPIOut":["/order/v1/orders/:orderId/receiveorder/:receiveorderId", "/ExternalAPI/V3/:supplierId/order/V1/orders/:orderId/receiveorder/:receiveorderId"],
 		"sacfSessionProfile":["/v1/configuration/o/nss/o/sacf/sacfXsessionId/:sacfXsessionId.json"],
-		"deliver":["/deliver", "/ExternalAPI/V3/:supplierId/deliver/V1/delivers"],
+		"deliver":["/deliver", "/ExternalAPI/V3/:supplierId/deliver/V1/delivers/order/:orderId/receiveorder/:receiveorderId"],
 		"decryptPSPid":["/scf/v2/partnerSpecificPrivateId/:urlEncoding*.json"],
 		"decrypt":["/scf/v2/clientIds/:urlEncoding*.json"],
 		"acrfbb":["/aaf/v1.4.4/authenticatePublicId/email/:email.json"],
@@ -14,6 +14,7 @@
 		"registerServiceId":["/aaf/v1.4.4/subscriptions/:idType/:idValue.json"],
 		"dhcp":["/FBBRadiusProvisioingV1.6/services/FBBRadiusServicePort"],
 		"validateToken":["/scf/v2/validateToken.json"],
-		"pushNotificationInfo": ["/api/v1/aaf/pushNotificationInfo.json"]
+		"pushNotificationInfo": ["/api/v1/aaf/pushNotificationInfo.json"],
+		"getPtsAppProfileEntry": ["/v1/pts/partnerId/20002/ds/Service/ptsAppName/AISPLAYBOX.json"]
 	}
 }

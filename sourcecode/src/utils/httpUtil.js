@@ -13,8 +13,8 @@ const extend = require('extend')
  */
 exports.httpResponse = (res, resultCode, nodename, cmd, dataRes, summary, detail) => {
   const ret = {}
-  // ret.resultCode = resultCode.resultCode
-  // ret.developerMessage = resultCode.developerMessage
+  ret.resultCode = resultCode.resultCode
+  ret.developerMessage = resultCode.developerMessage
   extend(ret, dataRes)
 
   summary.end(resultCode.resultCode, resultCode.developerMessage)

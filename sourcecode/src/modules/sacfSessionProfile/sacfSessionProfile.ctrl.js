@@ -53,8 +53,9 @@ exports.sacfSessionProfile = function (req, res) {
     appLog.debug('raw headers : ', JSON.stringify(req.rawHeaders))
 
     const ret = {
-      resultCode: '20000',
-      developerMessage: 'success'
+      resultCode: constResultCode[20000].resultCode,
+      developerMessage: constResultCode[20000].developerMessage,
+      resultDescription: constResultCode[20000].developerMessage
     }
     res.req = req
     appLog.stat(stat.retResSuc(conf.cmd))
