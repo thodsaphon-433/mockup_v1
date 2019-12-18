@@ -15,6 +15,6 @@
 		"dhcp":["/FBBRadiusProvisioingV1.6/services/FBBRadiusServicePort"],
 		"validateToken":["/scf/v2/validateToken.json"],
 		"pushNotificationInfo": ["/api/v1/aaf/pushNotificationInfo.json"],
-		"getPtsAppProfileEntry": ["/v1/pts/partnerId/20002/ds/Service/ptsAppName/AISPLAYBOX.json"]
+		"getPtsAppProfileEntry": ["/v1/pts/partnerId/20002/ds/Service/ptsAppName/:ptsAppName.json"]
 	}
 }

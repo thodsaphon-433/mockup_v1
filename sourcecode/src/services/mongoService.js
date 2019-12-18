@@ -99,7 +99,6 @@ async function insertOne (col, schema, opt, appLog, detail) {
 
     throw err
   }
-  
 
   detail.addInputResponse(opt.desNode, opt.cmd, xTid, JSON.stringify(doc) || null, {
     Body: doc

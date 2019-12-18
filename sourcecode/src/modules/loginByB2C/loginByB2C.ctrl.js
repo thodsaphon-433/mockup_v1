@@ -37,13 +37,13 @@ exports.loginByB2C = function (req, res) {
   })
 
   /**  ========================== [START DETAIL LOG] ========================== */
-  const opt = {
-    headers: {
-      'X-Session-Id': Xsession,
-      'X-Rtid': Xrtid
-    }
-  }
-  appLog.info('setting header: ', opt)
+  // const opt = {
+  //   headers: {
+  //     'X-Session-Id': Xsession,
+  //     'X-Rtid': Xrtid
+  //   }
+  // }
+  // appLog.info('setting header: ', opt)
   /**  ========================== [END DETAIL LOG] ========================== */
   try {
     appLog.stat(stat.recvReq(conf.cmd))

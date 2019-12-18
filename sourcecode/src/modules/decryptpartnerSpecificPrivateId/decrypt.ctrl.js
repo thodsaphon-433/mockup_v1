@@ -35,26 +35,28 @@ exports.decrypt = function (req, res) {
   })
 
   /**  ========================== [START DETAIL LOG] ========================== */
-  const opt = {
-    headers: {
-      'X-Session-Id': Xsession,
-      'X-Rtid': Xrtid
-    }
-  }
-  appLog.info('setting header: ', opt)
+  // const opt = {
+  //   headers: {
+  //     'X-Session-Id': Xsession,
+  //     'X-Rtid': Xrtid
+  //   }
+  // }
+  // appLog.info('setting header: ', opt)
   /**  ========================== [END DETAIL LOG] ========================== */
   try {
     appLog.stat(stat.recvReq(conf.cmd))
     // appLog.debug('receive deliverStatus from url : ===> ', body.callBackUrl)
     appLog.debug('raw headers : ', JSON.stringify(req.rawHeaders))
 
-    const ret = {
-      resultCode: '20000',
-      developerMessage: 'success',
-      partnerId: '20002',
-      publicId: '0812345678',
-      privateId: 'zvwY6hEbL5BREEp5bgi8vAgQvtgp8NaJ'
-    }
+    const ret = {"resultCode":"20000","developerMessage":"Success","appName":"vimmiottapp","platformName":"Android","appVersion":"1.2.0","partnerId":"30052"}
+    // {
+    //   resultCode: '20000',
+    //   developerMessage: 'success',
+    //   partnerId: '20002',
+    //   publicId: '0812345678',
+    //   privateId: 'zvwY6hEbL5BREEp5bgi8vAgQvtgp8NaJ'
+    // }
+    
 
     res.set(
       {
