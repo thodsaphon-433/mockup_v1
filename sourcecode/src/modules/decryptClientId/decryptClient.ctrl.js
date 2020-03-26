@@ -57,6 +57,7 @@ exports.decryptClient = function (req, res) {
       developerMessage: 'success',
       appName: 'AISPLAYBOX',
       platformName: 'iOS',
+      // platformName: 'android',
       partnerId: '20002',
       appVersion: '1.0.0',
       moreInfo: 'http://smaf.panty.ais/scf/20000'

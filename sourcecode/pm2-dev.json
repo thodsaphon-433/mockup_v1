@@ -3,7 +3,7 @@
     "exec_mode": "fork",
     "instances": 1,
     "script": "index.js",
-    "name": "Mockup_AEMF",
+    "name": "Mockup",
     "interpreter": "node",
     "env": {
       "node_name": "Mockup_AEMF",
@@ -27,26 +27,26 @@
           "path": "./logs/appLog/",
           "level": "debug",
           "console": true,
-          "file": true,
-          "rotation_time": 60
+          "file": false,
+          "rotation_time": 5
         },
         "summary": {
           "path": "./logs/summary/",
           "console": false,
-          "file": true,
-          "rotation_time": 60
+          "file": false,
+          "rotation_time": 5
         },
         "detail": {
           "path": "./logs/detail/",
           "console": false,
-          "file": true,
-          "rotation_time": 60
+          "file": false,
+          "rotation_time": 5
         },
         "stat": {
           "path": "./logs/stat/",
           "console": false,
-          "file": true,
-          "rotation_time": 60,
+          "file": false,
+          "rotation_time": 5,
           "statInterval": 1,
           "mode": 0
         }

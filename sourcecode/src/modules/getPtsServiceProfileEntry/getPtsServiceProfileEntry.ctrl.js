@@ -7,14 +7,14 @@ const stat = require('../../constants/stat.const')
 // const appconf = require('../../../conf/config.json').app
 // const genUtil = require('../../utils/genUtil')
 
-exports.getPtsAppProfileEntry = function (req, res) {
+exports.getPtsServiceProfileEntry = function (req, res) {
   /**  ========================== [START VALIABLE] ========================== */
   const appLog = req.logkb
   const body = req.body
 
   const conf = {
     nodeName: 'mockup',
-    cmd: 'getPtsAppProfileEntry',
+    cmd: 'getPtsServiceProfileEntry',
     requ: 'CLIENT'
   }
 
@@ -24,7 +24,7 @@ exports.getPtsAppProfileEntry = function (req, res) {
   /**  ========================== [END VALIABLE] ========================== */
 
   /**  ========================== [START LOG] ========================== */
-  appLog.info('==========> getPtsAppProfileEntry proccessing <==========')
+  appLog.info('==========> getPtsServiceProfileEntry proccessing <==========')
   // const identity = `${Xsession}:${Xrtid}:${Xtid}`
   const session = `${Xsession}:${Xrtid}:`
   const summary = logg.summary(session, '', conf.cmd, '')
@@ -55,14 +55,36 @@ exports.getPtsAppProfileEntry = function (req, res) {
     const ret = {
       resultCode: "20000",
       resultDescription: "Success",
-      ptsAppProfileEntry: [
+      ptsServiceProfileEntry: [
         {
           dn:
-            "ptsAppName=vimmiottapp,ds=Service,ds=pts,subdata=services,uid=661451235871303,ds=SUBSCRIBER,o=AIS,DC=C-NTDB",
-          ptsAppName: "vimmiottapp",
-          ptsRule: "eyJwb2xpY3kiOiB7Im5ldHdvcmtfYXZhaWxhYmlsaXR5IjogW3sibmV0d29yayI6ICJhaXMiLCAiYXV0aGVudGljYXRlIjogW3sidHlwZSI6ICJtc2lzZG4iLCAibG9naW5fY2hhbm5lbF9hdmFpbGFiaWxpdHkiOiBbImF1dG8iXSB9LCB7InR5cGUiOiAiZmJiaWQiLCAibG9naW5fY2hhbm5lbF9hdmFpbGFiaWxpdHkiOiBbImF1dG8iLCAib3RwIl0gfSwgeyJ0eXBlIjogImRlZmF1bHQiLCAibG9naW5fY2hhbm5lbF9hdmFpbGFiaWxpdHkiOiBbImZhY2Vib29rIiwgImxpbmUiXSB9XSB9LCB7Im5ldHdvcmsiOiAiYW5vbnltb3VzIiwgImF1dGhlbnRpY2F0ZSI6IFt7InR5cGUiOiAiZGVmYXVsdCIsICJsb2dpbl9jaGFubmVsX2F2YWlsYWJpbGl0eSI6IFsiZmFjZWJvb2t8bGluZXxlbWFpbF9wYXNzd29yZCJdIH1dIH1dIH0sICJjaGVja05ldHdvcmsiOiBbeyJyZWdpc3RlckNoYW5uZWxBdmFpbGFiaWxpdHkiOiAiYXV0byIsICJuZXR3b3JrQXZhaWxhYmlsaXR5IjogWyJBSVNXSUZJIiwgIk9USEVSIiwgIkFJU0ZCQiJdLCAic2VydmljZUlkIjogIkFJU1BsYXkiLCAiYWNjb3VudFR5cGUiOiAiYWxsIiwgIm90cENoYW5uZWwiOiAic21zIn1dLCAiY29uc2VudEZsYWciOiBmYWxzZSwgImF1dG9PYnRhaW5GbGFnIjogZmFsc2UsICJmbG93VHlwZSI6ICJub3JtYWwiLCAibG9naW5CMkIyQ0F0dGFjaEZsYWciOiB0cnVlLCAidGVtcGxhdGVOYW1lIjogInZpbW1pX2xvZ2luIiwgImNhbGxCYWNrTWV0aG9kIjogWyJQT1NUIl0sICJmbG93QXZhaWxhYmlsaXR5IjogWyJzb2NpYWxfbGluZSIsICJzb2NpYWxfZ29vZ2xlIiwgImVtYWlsX3Bhc3N3b3JkIl0gfQ==",
-          // ptsRule: "eyJjaGVja05ldHdvcmsiOiBbeyJyZWdpc3RlckNoYW5uZWxBdmFpbGFiaWxpdHkiOiAiYXV0byIsICJuZXR3b3JrQXZhaWxhYmlsaXR5IjogWyJBSVNXSUZJIiwgIk9USEVSIiwgIkFJU0ZCQiJdLCAic2VydmljZUlkIjogIkFJU1BsYXkiLCAiYWNjb3VudFR5cGUiOiAiYWxsIiwgIm90cENoYW5uZWwiOiAic21zIn1dLCAiY29uc2VudEZsYWciOiBmYWxzZSwgImF1dG9PYnRhaW5GbGFnIjogZmFsc2UsICJmbG93VHlwZSI6ICJub3JtYWwiLCAibG9naW5CMkIyQ0F0dGFjaEZsYWciOiB0cnVlLCAidGVtcGxhdGVOYW1lIjogInZpbW1pX2xvZ2luIiwgImNhbGxCYWNrTWV0aG9kIjogWyJQT1NUIl0sICJmbG93QXZhaWxhYmlsaXR5IjogWyJzb2NpYWxfbGluZSIsICJzb2NpYWxfZ29vZ2xlIiwgImVtYWlsX3Bhc3N3b3JkIl0sICJwb2xpY3kiOiB7InRlbXBsYXRlX2Zvcm0iOiAic2lhbXBpd2F0IiwgInNzbyI6ICJ0cnVlIiwgImlzX25hdGl2ZV9hcHAiOiBmYWxzZSwgIm5ldHdvcmtfYXZhaWxhYmlsaXR5IjogW3sibmV0d29yayI6ICJhaXMiLCAiYXV0aGVudGljYXRlIjogW3sidHlwZSI6ICJtc2lzZG4iLCAibG9naW5fY2hhbm5lbF9hdmFpbGFiaWxpdHkiOiBbImF1dG8iXSB9LCB7InR5cGUiOiAiZmJiaWQiLCAibG9naW5fY2hhbm5lbF9hdmFpbGFiaWxpdHkiOiBbImF1dG8iLCJvdHAiXSB9LCB7InR5cGUiOiAiZGVmYXVsdCIsICJsb2dpbl9jaGFubmVsX2F2YWlsYWJpbGl0eSI6IFsiZmFjZWJvb2siLCJsaW5lIl0gfSBdIH0sIHsibmV0d29yayI6ICJhbm9ueW1vdXMiLCAiYXV0aGVudGljYXRlIjogW3sidHlwZSI6ICJkZWZhdWx0IiwgImxvZ2luX2NoYW5uZWxfYXZhaWxhYmlsaXR5IjogWyJmYWNlYm9va3xsaW5lfGVtYWlsX3Bhc3N3b3JkIl0gfSBdIH0gXSB9LCAiY2hhbm5lbHMiOiBbeyJzb2NpYWxfZmIiOiB7ImFwcElkIjogIjI2NTc2MTc4NDE0Nzk3MCIsICJhcHBBY2NjZXNzVG9rZW4iOiAiMjY1NzYxNzg0MTQ3OTcwfGN2SkJzZU1WUHRsdHhYWXY1bU9PMHVpYkpLUSIsICJzZWxlY3RpdmVQdWJsaWNJZCI6ICJlbWFpbHxlbWFpbCxmYl9pZHxpZCIsICJjaGFubmVsU2VjcmV0IjogImQxNWYyZGZkNzcyOWQ0ODZkYzg4OGNjNGUwNjM3YjRkIiwgInNjb3BlR3JhcGgiOiAiaWQsbmFtZSxlbWFpbCxwaWN0dXJlLnR5cGUobGFyZ2UpLGJpcnRoZGF5LGdlbmRlcixmaXJzdF9uYW1lLGxhc3RfbmFtZSIsICJzY29wZVBlcm1pc3Npb24iOiAiZW1haWwsdXNlcl9nZW5kZXIsdXNlcl9iaXJ0aGRheSIsICJ0ZW1wbGF0ZUlkVG9rZW5JbmZvIjogeyJpZCI6ICJpZCIsICJlbWFpbCI6ICJlbWFpbCIsICJuYW1lIjogIm5hbWUiLCAiYmlydGhkYXkiOiAiYmlydGhkYXkiLCAiZ2VuZGVyIjogImdlbmRlciIsICJwaWN0dXJlIjogInBpY3R1cmUuZGF0YS51cmwifSB9IH0sIHsic29jaWFsX2xpbmUiOiB7ImNoYW5uZWxJZCI6ICIxNjEwNzg1NjIyIiwgImNoYW5uZWxTZWNyZXQiOiAiY2IzNjJiMmRlYThhODgyZWFkOWUxMzJlM2EwNDljZTUiLCAic2VsZWN0aXZlUHVibGljSWQiOiAiZW1haWx8ZW1haWwsbGluZV9pZHxzdWIiLCAic2NvcGVQZXJtaXNzaW9uIjogInByb2ZpbGUgb3BlbmlkIGVtYWlsIiwgInRlbXBsYXRlSWRUb2tlbkluZm8iOiB7ImlkIjogInN1YiIsICJlbWFpbCI6ICJlbWFpbCIsICJuYW1lIjogIm5hbWUiLCAicGljdHVyZSI6ICJwaWN0dXJlIn0gfSB9LCB7InNvY2lhbF93ZWNoYXQiOiB7ImFwcElkIjogInd4OTRiYjRjZjQ4YmVmYjA5YyIsICJzZWNyZXQiOiAiNGU2YTczYWE3NWFkNWFkZGUyMDEwMjhjYjU5ODBlZTYiLCAic2VsZWN0aXZlUHVibGljSWQiOiAid2VjaGF0X2lkfG9wZW5pZCIsICJzY29wZVBlcm1pc3Npb24iOiAic25zYXBpX3VzZXJpbmZvIiwgImxhbmciOiAiZW5fVVMifSB9LCB7ImVtYWlsX3Bhc3N3b3JkIjogeyJzZWxlY3RpdmVfcHVibGljX2lkIjogImVtYWlsIiwgImFjdGl2YXRpb25fbGlua19ob3N0IjogInd3dy5haXMuY28udGgiLCAidGVtcGxhdGVfaWRfdG9rZW5faW5mbyI6IHsiZmlyc3RuYW1lIjogInN1YnNjcmliZXJQcm9maWxlLmdpdmVuTmFtZSIsICJsYXN0bmFtZSI6ICJzdWJzY3JpYmVyUHJvZmlsZS5zdXJuYW1lIn0gfSB9IF0gfQ==",
-          objectClass: "ptsAppProfileEntry"
+            "ptsAppKeyName=TestSingularity|Browser|1.0.0,ds=Service,ds=pts,subdata=services,uid=661550888279074,ds=SUBSCRIBER,o=AIS,dc=C-NTDB",
+          objectClass: "ptsServiceProfileEntry",
+          ptsListOfAPI: [
+            "sgl/workspace:1111",
+            "sgl/profiles:1111",
+            "sgl/masters:1111",
+            "marketplace/products:1111",
+            "marketplace/banners:1111",
+            "marketplace/carts:1111",
+            "marketplace/orders:1111",
+            "marketplace/ships:1111",
+            "marketplace/payments:1111"
+          ],
+          ptsAppId: "93012200005",
+          ptsAppState: "active",
+          ptsListOfRedirectURL: [
+            "partner_iot|https://10.104.240.216:8443/hummus",
+            "production|https://sfe.ais.co.th:8443/hummus",
+            "https://www.ais.co.th/",
+            "https://localhost:9090/api/oauth/callback"
+          ],
+          ptsMaxAuthCodeTime: "21600",
+          ptsListOfVMIP: [
+            "partner_iot|13.228.4.50",
+            "production|13.229.186.78"
+          ],
+          ptsMaxAccessTokenTime: "2592000"
         }
       ]
     };

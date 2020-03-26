@@ -3,16 +3,18 @@ const logg = require('commonlog-kb')
 const constResultCode = require('../../constants/resultCode.const')
 const httpResponse = require('../../utils/httpUtil').httpResponse
 const stat = require('../../constants/stat.const')
+// const moment = require('moment')
+// const appconf = require('../../../conf/config.json').app
 const genUtil = require('../../utils/genUtil')
 
-exports.loginByB2C = function (req, res) {
+exports.checkPublicIdAvailability = function (req, res) {
   /**  ========================== [START VALIABLE] ========================== */
   const appLog = req.logkb
   const body = req.body
 
   const conf = {
     nodeName: 'mockup',
-    cmd: 'loginByB2C',
+    cmd: 'checkPublicIdAvailability',
     requ: 'CLIENT'
   }
 
@@ -22,7 +24,7 @@ exports.loginByB2C = function (req, res) {
   /**  ========================== [END VALIABLE] ========================== */
 
   /**  ========================== [START LOG] ========================== */
-  appLog.info('==========> loginByB2C proccessing <==========')
+  appLog.info('==========> checkPublicIdAvailability proccessing <==========')
   // const identity = `${Xsession}:${Xrtid}:${Xtid}`
   const session = `${Xsession}:${Xrtid}:`
   const summary = logg.summary(session, '', conf.cmd, '')
@@ -50,31 +52,21 @@ exports.loginByB2C = function (req, res) {
     // appLog.debug('receive deliverStatus from url : ===> ', body.callBackUrl)
     appLog.debug('raw headers : ', JSON.stringify(req.rawHeaders))
 
-    var registerFlag = true
-    var authenFlag = false
-    // var registerFlag = false
-    // var authenFlag = true
     const ret = {
-      resultCode: '20000',
-      developerMessage: 'success',
-      registerFlag: registerFlag,
-      authenFlag: authenFlag,
-      privateId: 'zvwY6hEbL5BREEp5bgi8vAgQvtgp8NaJ',
-      ptsListOfAPI: [
-        'AIS Exclusive|C:password,R:no,U:password,D:0,L:token|no',
-        'Push Notification|C:password,R:no,U:password,D:no,L:token|yes'
-      ]
+      "resultCode": "40301",
+      "developerMessage": "Success",
+      "uid": "1233554848546348",
+      "privateId": "kkkdiojkolksjfpwiojpoiyhsiod@ais.co.th",
+      "isFirstRegistration": true
     }
     res.req = req
     appLog.stat(stat.retResSuc(conf.cmd))
     res.set(
       {
-        'X-Session-Id': req.headers['x-session-id'],
-        'X-App': 'AppName=AISPLAYBOX; appVersion=1.0.0',
-        'X-Partner-Specific-Private-Id': genUtil.genXsession()
+        'X-Session-Id': req.headers['x-session-id']
       }
     )
-    return httpResponse(res, constResultCode[20000], conf.node, conf.cmd, ret, summary, detail)
+    return httpResponse(res, constResultCode[40301], conf.node, conf.cmd, ret, summary, detail)
   } catch (error) {
     if (typeof error.code === 'string') {
       appLog.warn('[messageCtrl.messages] Catch: HANDLE ERROR')

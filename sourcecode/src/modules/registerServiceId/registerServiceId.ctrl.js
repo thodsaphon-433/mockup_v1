@@ -53,7 +53,7 @@ exports.registerServiceId = function (req, res) {
     appLog.debug('raw headers : ', JSON.stringify(req.rawHeaders))
 
     const ret = {
-      resultCode: '20100',
+      resultCode: '20000',
       developerMessage: 'success',
       privateId: 'zvwY6hEbL5BREEp5bgi8vAgQvtgp8NaJ'
     }
@@ -66,7 +66,7 @@ exports.registerServiceId = function (req, res) {
         'X-Partner-Specific-Private-Id': genUtil.genXsession()
       }
     )
-    return httpResponse(res, constResultCode[20100], conf.node, conf.cmd, ret, summary, detail)
+    return httpResponse(res, constResultCode[20000], conf.node, conf.cmd, ret, summary, detail)
   } catch (error) {
     if (typeof error.code === 'string') {
       appLog.warn('[messageCtrl.messages] Catch: HANDLE ERROR')

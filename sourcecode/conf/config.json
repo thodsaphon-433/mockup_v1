@@ -11,10 +11,15 @@
 		"loginByB2C":["/scf/v2/loginByB2C.json"],
 		"attach":["/scf/v2/attach.json"],
 		"obtainAuthorityList":["/scf/v2/obtainAuthorityList.json"],
-		"registerServiceId":["/aaf/v1.4.4/subscriptions/:idType/:idValue.json"],
+		"registerServiceId":["/aaf/v1.4.4/subscriptions/:idType/:idValue.json", "/aaf/v1.4.4/subscriptions/:idType/:idValue/:uid.json"],
 		"dhcp":["/FBBRadiusProvisioingV1.6/services/FBBRadiusServicePort"],
 		"validateToken":["/scf/v2/validateToken.json"],
 		"pushNotificationInfo": ["/api/v1/aaf/pushNotificationInfo.json"],
-		"getPtsAppProfileEntry": ["/v1/pts/partnerId/20002/ds/Service/ptsAppName/:ptsAppName.json"]
+		"getPtsAppProfileEntry": ["/v1/pts/partnerId/:partnerId/ds/Service/ptsAppName/:ptsAppName.json"],
+		"getPtsServiceProfileEntry": ["/v1/pts/partnerId/:partner_id/ds/Service/ptsAppKeyName/:pts_app_key_name.json"],
+		"getPtsPartnerProfile": ["/v1/pts/partnerId/:partner_id/ds/Profile.json"],
+		"getGubCommon": ["/v1/subscriber/privateId/:privateId.json"],
+		"checkPublicIdAvailability": ["/api/v2/aaf/checkPublicIdAvailability/:id_type/:id_value.json"],
+		"postRSAKey": ["/kms/v3/partners/:partnerName/secretkey"]
 	}
 }

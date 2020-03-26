@@ -58,7 +58,7 @@ var config = {
       },
       stat: {
         path: './logs/stat/',
-        console: true,
+        console: false,
         file: false,
         rotation_time: 60,
         statInterval: 1,
