@@ -5,16 +5,15 @@ const httpResponse = require('../../utils/httpUtil').httpResponse
 const stat = require('../../constants/stat.const')
 // const moment = require('moment')
 // const appconf = require('../../../conf/config.json').app
-const genUtil = require('../../utils/genUtil')
 
-exports.postRSAKey = function (req, res) {
+exports.redirect = function (req, res) {
   /**  ========================== [START VALIABLE] ========================== */
   const appLog = req.logkb
   const body = req.body
 
   const conf = {
     nodeName: 'mockup',
-    cmd: 'postRSAKey',
+    cmd: 'redirect',
     requ: 'CLIENT'
   }
 
@@ -24,7 +23,7 @@ exports.postRSAKey = function (req, res) {
   /**  ========================== [END VALIABLE] ========================== */
 
   /**  ========================== [START LOG] ========================== */
-  appLog.info('==========> postRSAKey proccessing <==========')
+  appLog.info('==========> redirect proccessing <==========')
   // const identity = `${Xsession}:${Xrtid}:${Xtid}`
   const session = `${Xsession}:${Xrtid}:`
   const summary = logg.summary(session, '', conf.cmd, '')
@@ -39,35 +38,22 @@ exports.postRSAKey = function (req, res) {
   })
 
   /**  ========================== [START DETAIL LOG] ========================== */
-  // const opt = {
-  //   headers: {
-  //     'X-Session-Id': Xsession,
-  //     'X-Rtid': Xrtid
-  //   }
-  // }
-  // appLog.info('setting header: ', opt)
+  const opt = {
+    headers: {
+      'X-Session-Id': Xsession,
+      'X-Rtid': Xrtid
+    }
+  }
+  appLog.info('setting header: ', opt)
   /**  ========================== [END DETAIL LOG] ========================== */
   try {
     appLog.stat(stat.recvReq(conf.cmd))
     // appLog.debug('receive deliverStatus from url : ===> ', body.callBackUrl)
     appLog.debug('raw headers : ', JSON.stringify(req.rawHeaders))
 
-    const ret = {
-      "resultCode": "20000",
-      "developerMessage": "Success",
-      "kid": "q5PuD8553s",
-      "privatekey": "-----BEGIN PRIVATE KEY-----\nMIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAJv+N8K8ec0osjgIBg88HhF2PIk1\n8H0ZHOgHGOPp27/A8UhNz8B079J+rnWeAp3Lg5WGfKf/V6eMhAY0EDkYp5dqo0/bBgf1xElUmw1i\nWms0P3k9cpg3cY6rgo9PAqZlwh6lELbkRmrOX5tyXMm7GJ6bwMxDQPymer5dOyDei2qdAgMBAAEC\ngYA8wMGOwkDduh/O2rEhddRwEJB7D9rdnc44P6td+FJxV/+gnU1wMxrD7Dqd7DAwrHZO4dXix/un\ncX5pvBUlZ4i9P8zfvS36du9yZA9tPYQ+nwAh9BuzRkVcRwUxisb0N3iDaBCPHaMXar3YRd5lwj9P\nLRdWdlIEQdEjKxq/6V+oAQJBANidCuGsSZTrxIKU1xN1MYrOGvq8yTIw1VB1azfSjy/1WLaZKKZk\nnsZ9r1iPrawwGfRTswivvt7VpwnHYKK7oR0CQQC4W2gjTERoNWGZzJaLYU/vgNg4YgvSQUzeqtfx\n30LBU6o0EvH0rsFCrzi7LG+zObR40pq3dAyD6OwyDccsSjeBAkEAoleIWTwDZZ4RiAA+9PFHMQ1p\nAPROIdSheoyVz595+up5E1jUM2iD6qU1rjz4X20pdojoTCFS/rTHXLfVgAD5LQJAT1xp8+f8+q8g\nGMkNdWqqsntQmNT8KcKaiLAazbBCWF7fwhL1vVMNNtufHFQAsbKBkhF3MMnwKUi3hMSRnOtGAQJA\nCh2Xdr7rJQcOck+slf5O2zCfbO8s7ym1FiJFU4TUVhciwyxROztZFjpNNJN3phEwR2CIPE6ICzpn\n/y64dA9jag==\n-----END PRIVATE KEY-----\n",
-      "expires_in": 86400
-    }
+    const ret = req.query
     res.req = req
     appLog.stat(stat.retResSuc(conf.cmd))
-    res.set(
-      {
-        'X-Session-Id': req.headers['x-session-id'],
-        'X-Tid': req.headers['x-tid'],
-        'X-Rtid': req.headers['x-rtid']
-      }
-    )
     return httpResponse(res, constResultCode[20000], conf.node, conf.cmd, ret, summary, detail)
   } catch (error) {
     if (typeof error.code === 'string') {

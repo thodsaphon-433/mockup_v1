@@ -77,14 +77,15 @@ exports.getPtsServiceProfileEntry = function (req, res) {
             "partner_iot|https://10.104.240.216:8443/hummus",
             "production|https://sfe.ais.co.th:8443/hummus",
             "https://www.ais.co.th/",
-            "https://localhost:9090/api/oauth/callback"
+            "https://localhost:9090/api/oauth/callback",
+            'http://localhost:8989/api/oauth/callback'
           ],
-          ptsMaxAuthCodeTime: "21600",
+          ptsMaxAuthCodeTime: "3600000",
           ptsListOfVMIP: [
             "partner_iot|13.228.4.50",
             "production|13.229.186.78"
           ],
-          ptsMaxAccessTokenTime: "2592000"
+          ptsMaxAccessTokenTime: "3600000"
         }
       ]
     };
