@@ -78,7 +78,8 @@ exports.getPtsServiceProfileEntry = function (req, res) {
             "production|https://sfe.ais.co.th:8443/hummus",
             "https://www.ais.co.th/",
             "https://localhost:9090/api/oauth/callback",
-            'http://localhost:8989/api/oauth/callback'
+            'http://localhost:8989/api/oauth/callback',
+            'http://25.31.155.31:8989/api/oauth/callback'
           ],
           ptsMaxAuthCodeTime: "3600000",
           ptsListOfVMIP: [
