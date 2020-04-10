@@ -21,6 +21,7 @@
 		"getGubCommon": ["/v1/subscriber/privateId/:privateId.json"],
 		"checkPublicIdAvailability": ["/api/v2/aaf/checkPublicIdAvailability/:id_type/:id_value.json"],
 		"postRSAKey": ["/kms/v3/partners/AIS/secretkey"],
-		"redirect": ["/api/oauth/callback"]
+		"redirect": ["/api/oauth/callback"],
+		"eligibleService": ["/api/v2/aaf/eligibleService.json"]
 	}
 }
