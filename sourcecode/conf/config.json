@@ -20,7 +20,7 @@
 		"getPtsPartnerProfile": ["/v1/pts/partnerId/:partner_id/ds/Profile.json"],
 		"getGubCommon": ["/v1/subscriber/privateId/:privateId.json"],
 		"checkPublicIdAvailability": ["/api/v2/aaf/checkPublicIdAvailability/:id_type/:id_value.json"],
-		"postRSAKey": ["/kms/v3/partners/AIS/secretkey"],
+		"postRSAKey": ["/kms/v3/partners/AIS/rsakey"],
 		"redirect": ["/api/oauth/callback"]
 	}
 }
