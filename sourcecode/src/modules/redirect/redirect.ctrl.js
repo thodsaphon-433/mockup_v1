@@ -51,8 +51,13 @@ exports.redirect = function (req, res) {
     // appLog.debug('receive deliverStatus from url : ===> ', body.callBackUrl)
     appLog.debug('raw headers : ', JSON.stringify(req.rawHeaders))
 
-    const ret = req.query
-    res.req = req
+    const ret = {}
+    Object.assign(ret, req.query)
+    if (req.body) {
+      Object.assign(ret, req.body)
+    }
+    res.set(req.headers)
+    console.log('req.headers: ', req.headers);
     appLog.stat(stat.retResSuc(conf.cmd))
     return httpResponse(res, constResultCode[20000], conf.node, conf.cmd, ret, summary, detail)
   } catch (error) {
