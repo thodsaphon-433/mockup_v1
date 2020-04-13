@@ -5,15 +5,16 @@ const httpResponse = require('../../utils/httpUtil').httpResponse
 const stat = require('../../constants/stat.const')
 // const moment = require('moment')
 // const appconf = require('../../../conf/config.json').app
+const genUtil = require('../../utils/genUtil')
 
-exports.redirect = function (req, res) {
+exports.eligibleService = function (req, res) {
   /**  ========================== [START VALIABLE] ========================== */
   const appLog = req.logkb
   const body = req.body
 
   const conf = {
     nodeName: 'mockup',
-    cmd: 'redirect',
+    cmd: 'eligibleService',
     requ: 'CLIENT'
   }
 
@@ -23,7 +24,7 @@ exports.redirect = function (req, res) {
   /**  ========================== [END VALIABLE] ========================== */
 
   /**  ========================== [START LOG] ========================== */
-  appLog.info('==========> redirect proccessing <==========')
+  appLog.info('==========> eligibleService proccessing <==========')
   // const identity = `${Xsession}:${Xrtid}:${Xtid}`
   const session = `${Xsession}:${Xrtid}:`
   const summary = logg.summary(session, '', conf.cmd, '')
@@ -38,27 +39,30 @@ exports.redirect = function (req, res) {
   })
 
   /**  ========================== [START DETAIL LOG] ========================== */
-  const opt = {
-    headers: {
-      'X-Session-Id': Xsession,
-      'X-Rtid': Xrtid
-    }
-  }
-  appLog.info('setting header: ', opt)
+  // const opt = {
+  //   headers: {
+  //     'X-Session-Id': Xsession,
+  //     'X-Rtid': Xrtid
+  //   }
+  // }
+  // appLog.info('setting header: ', opt)
   /**  ========================== [END DETAIL LOG] ========================== */
   try {
     appLog.stat(stat.recvReq(conf.cmd))
     // appLog.debug('receive deliverStatus from url : ===> ', body.callBackUrl)
     appLog.debug('raw headers : ', JSON.stringify(req.rawHeaders))
 
-    const ret = {}
-    Object.assign(ret, req.query)
-    if (req.body) {
-      Object.assign(ret, req.body)
-    }
-    res.set(req.headers)
-    console.log('req.headers: ', req.headers);
+    const ret = {
+      resultCode: "20000",
+      developerMessage: "Success"
+    };
+    
     appLog.stat(stat.retResSuc(conf.cmd))
+    res.set(
+      {
+        'X-Session-Id': req.headers['x-session-id']
+      }
+    )
     return httpResponse(res, constResultCode[20000], conf.node, conf.cmd, ret, summary, detail)
   } catch (error) {
     if (typeof error.code === 'string') {
