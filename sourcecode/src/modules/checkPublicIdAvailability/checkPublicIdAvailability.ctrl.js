@@ -1,4 +1,4 @@
-const logg = require('commonlog-kb')
+﻿const logg = require('commonlog-kb')
 // const messageFunc = require('./decryptClient.func')
 const constResultCode = require('../../constants/resultCode.const')
 const httpResponse = require('../../utils/httpUtil').httpResponse
@@ -53,7 +53,7 @@ exports.checkPublicIdAvailability = function (req, res) {
     appLog.debug('raw headers : ', JSON.stringify(req.rawHeaders))
 
     const ret = {
-      "resultCode": "40301",
+      "resultCode": "20000",
       "developerMessage": "Success",
       "uid": "1233554848546348",
       "privateId": "kkkdiojkolksjfpwiojpoiyhsiod@ais.co.th",
