@@ -22,6 +22,7 @@
 		"checkPublicIdAvailability": ["/api/v2/aaf/checkPublicIdAvailability/:id_type/:id_value.json"],
 		"postRSAKey": ["/kms/v3/partners/AIS/rsakey"],
 		"redirect": ["/api/oauth/callback"],
-		"eligibleService": ["/api/v2/aaf/eligibleService.json"]
+		"eligibleService": ["/api/v2/aaf/eligibleService.json"],
+		"sendOneTimePassword": ["/api/v1/gsso/sendOneTimePW.json"]
 	}
 }
