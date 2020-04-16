@@ -53,7 +53,7 @@ exports.checkPublicIdAvailability = function (req, res) {
     appLog.debug('raw headers : ', JSON.stringify(req.rawHeaders))
 
     const ret = {
-      "resultCode": "20000",
+      "resultCode": "40301",
       "developerMessage": "Success",
       "uid": "1233554848546348",
       "privateId": "kkkdiojkolksjfpwiojpoiyhsiod@ais.co.th",

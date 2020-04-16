@@ -54,7 +54,7 @@ exports.getPtsPartnerProfile = function (req, res) {
 
     const ret = {
       resultCode: "20000",
-      developerMessage: "Success",
+      resultDescription: "Success",
       ptsPartnerProfile: [
         {
           dn: "ds=Profile,ds=pts,subdata=services,uid=<UID>,ds=SUBSCRIBER,o=AIS,DC=C-NTDB",
