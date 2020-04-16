@@ -82,12 +82,12 @@ exports.getPtsServiceProfileEntry = function (req, res) {
             'http://25.31.155.31:8989/api/oauth/callback',
             'https://www.ais.co.th/&scope=profile&state=poc0000001&nonce=poc-iot-2xxxxxxx'
           ],
-          ptsMaxAuthCodeTime: "3600000",
+          ptsMaxAuthCodeTime: "86400",
           ptsListOfVMIP: [
             "partner_iot|13.228.4.50",
             "production|13.229.186.78"
           ],
-          ptsMaxAccessTokenTime: "3600000"
+          ptsMaxAccessTokenTime: "86400"
         }
       ]
     };
