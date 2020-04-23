@@ -7,14 +7,14 @@ const stat = require('../../../constants/stat.const')
 // const appconf = require('../../../conf/config.json').app
 const genUtil = require('../../../utils/genUtil')
 
-exports.sendOneTimePassword = function (req, res) {
+exports.confirmOneTimePassword = function (req, res) {
   /**  ========================== [START VALIABLE] ========================== */
   const appLog = req.logkb
   const body = req.body
 
   const conf = {
     nodeName: 'mockup',
-    cmd: 'sendOneTimePassword',
+    cmd: 'confirmOneTimePassword',
     requ: 'CLIENT'
   }
 
@@ -24,7 +24,7 @@ exports.sendOneTimePassword = function (req, res) {
   /**  ========================== [END VALIABLE] ========================== */
 
   /**  ========================== [START LOG] ========================== */
-  appLog.info('==========> sendOneTimePassword proccessing <==========')
+  appLog.info('==========> confirmOneTimePassword proccessing <==========')
   // const identity = `${Xsession}:${Xrtid}:${Xtid}`
   const session = `${Xsession}:${Xrtid}:`
   const summary = logg.summary(session, '', conf.cmd, '')
@@ -60,7 +60,7 @@ exports.sendOneTimePassword = function (req, res) {
       transactionID: 'MdAiNf4OmyOJWLa63M',
       referenceNumber: '2954',
       operName: 'AIS',
-      lifeTimeoutMins: 10,
+      lifeTimeoutMins: '10',
       expirePassword: '28/04/2016 07:47:28',
     };
 
