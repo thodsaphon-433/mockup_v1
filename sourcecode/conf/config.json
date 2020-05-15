@@ -24,6 +24,7 @@
 		"redirect": ["/api/oauth/callback"],
 		"eligibleService": ["/api/v2/aaf/eligibleService.json"],
 		"sendOneTimePassword": ["/api/v1/gsso/sendOneTimePW.json"],
-		"confirmOneTimePassword": ["/api/v1/gsso/confirmOneTimePassword.json"]
+		"confirmOneTimePassword": ["/api/v1/gsso/confirmOneTimePassword.json"],
+		"fbbidOTP": ["/v3.2/user/contact-number"]
 	}
 }
