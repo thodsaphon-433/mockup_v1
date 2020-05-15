@@ -53,15 +53,17 @@ exports.sendOneTimePassword = function (req, res) {
     appLog.debug('raw headers : ', JSON.stringify(req.rawHeaders))
 
     const ret = {
-      code: '2000',
-      description: 'SUCCESS',
-      isSuccess: true,
-      orderRef: '0720160428073728988',
-      transactionID: 'MdAiNf4OmyOJWLa63M',
-      referenceNumber: '2954',
-      operName: 'AIS',
-      lifeTimeoutMins: 10,
-      expirePassword: '28/04/2016 07:47:28',
+      sendOneTimePWResponse: {
+        code: '2000',
+        description: 'SUCCESS',
+        isSuccess: 'true',
+        orderRef: '0720160428073728988',
+        transactionID: 'MdAiNf4OmyOJWLa63M',
+        referenceNumber: '2954',
+        operName: 'AIS',
+        lifeTimeoutMins: '10',
+        expirePassword: '28/04/2016 07:47:28',
+      }
     };
 
     res.req = req
