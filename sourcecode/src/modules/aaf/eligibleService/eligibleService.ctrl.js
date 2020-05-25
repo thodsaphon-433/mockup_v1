@@ -53,9 +53,14 @@ exports.eligibleService = function (req, res) {
     appLog.debug('raw headers : ', JSON.stringify(req.rawHeaders))
 
     const ret = {
-      resultCode: "20000",
-      developerMessage: "Success"
+      resultCode: "40000",
+      developerMessage: "SIMPLE ERROR"
     };
+
+    // const ret = {
+    //   resultCode: "20000",
+    //   developerMessage: "Success"
+    // };
     
     appLog.stat(stat.retResSuc(conf.cmd))
     res.set(
