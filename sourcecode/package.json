@@ -15,6 +15,7 @@
     "date-and-time": "^0.6.3",
     "express": "^4.16.4",
     "express-load": "^1.1.16",
+    "fs": "0.0.1-security",
     "kafka-node": "^4.0.2",
     "moment": "^2.24.0",
     "mongoose": "^5.4.17",
