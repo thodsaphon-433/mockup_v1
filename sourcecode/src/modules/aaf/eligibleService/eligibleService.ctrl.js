@@ -52,6 +52,11 @@ exports.eligibleService = function (req, res) {
     // appLog.debug('receive deliverStatus from url : ===> ', body.callBackUrl)
     appLog.debug('raw headers : ', JSON.stringify(req.rawHeaders))
 
+    // const ret = {
+    //   resultCode: "40000",
+    //   developerMessage: "SIMPLE ERROR"
+    // };
+
     const ret = {
       resultCode: "20000",
       developerMessage: "Success"

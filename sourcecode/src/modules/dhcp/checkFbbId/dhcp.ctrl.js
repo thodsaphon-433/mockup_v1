@@ -53,50 +53,50 @@ exports.dhcp = function (req, res) {
     appLog.debug('raw headers : ', JSON.stringify(req.rawHeaders))
 
     // const ret = '<?xml version="1.0" standalone="" ?>' +
-    //             '<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">' +
-    //               '<soap:Body>' +
-    //                 '<ns2:queryByIpAddressResponse xmlns:ns2="http://ws.fbb.ais.co.th/">' +
-    //                   '<return>' +
-    //                     '<customerInfo>' +
-    //                       '<customerId>8850002795</customerId>' +
-    //                       '<customerName>QAtest@ais.co.th</customerName>' +
-    //                       '<customerStatus>ACTIVE</customerStatus>' +
-    //                       '<latitude>0</latitude>' +
-    //                       '<longitude>0</longitude>' +
-    //                       '<onlineStatus>Online</onlineStatus>' +
-    //                       '<password>1234</password>' +
-    //                       '<qosProfileId>L200</qosProfileId>' +
-    //                       '<qosProfileName>100/100</qosProfileName>' +
-    //                     '</customerInfo>' +
-    //                     '<deviceInfo />' +
-    //                     '<dslInfo />' +
-    //                     '<fttxInfo />' +
-    //                     '<onlineInfo>' +
-    //                       '<acctInputOctets>1291460452</acctInputOctets>' +
-    //                       '<acctInputPackets>4101338</acctInputPackets>' +
-    //                       '<acctInterimTime>1474-02-11 17:31:28.185838</acctInterimTime>' +
-    //                       '<acctOutputOctets>2155400923</acctOutputOctets>' +
-    //                       '<acctOutputPackets>3799656</acctOutputPackets>' +
-    //                       '<acctSessionId>FBB_TTC04201300000000d63ff0010472</acctSessionId>' +
-    //                       '<acctSessionTime>687600</acctSessionTime>' +
-    //                       '<acctStartTime>1474-02-03 18:31:41.354217</acctStartTime>' +
-    //                       '<acctStatusType>3</acctStatusType>' +
-    //                       '<acctTerminationCause>0</acctTerminationCause>' +
-    //                       '<callingStationId>fc:4d:d4:f4:65:62</callingStationId>' +
-    //                       '<customerId>8850002795</customerId>' +
-    //                       '<framedIpAddress>10.104.146.81</framedIpAddress>' +
-    //                       '<nasId>FBB_TTC_BRAS</nasId>' +
-    //                       '<nasIpAddress>10.104.140.70</nasIpAddress>' +
-    //                       '<nasPortId>FBB_TTC_BRAS eth 0/4/2/1:3000</nasPortId>' +
-    //                       '<onlineCause>SUCCESS</onlineCause>' +
-    //                     '</onlineInfo>' +
-    //                     '<wifiInfo />' +
-    //                   '</return>' +
-    //                 '</ns2:queryByIpAddressResponse>' +
-    //               '</soap:Body>' +
-    //             '</soap:Envelope>'
+    const ret = '<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">' +
+                  '<soap:Body>' +
+                    '<ns2:queryByIpAddressResponse xmlns:ns2="http://ws.fbb.ais.co.th/">' +
+                      '<return>' +
+                        '<customerInfo>' +
+                          '<customerId>8850002795</customerId>' +
+                          '<customerName>QAtest@ais.co.th</customerName>' +
+                          '<customerStatus>ACTIVE</customerStatus>' +
+                          '<latitude>0</latitude>' +
+                          '<longitude>0</longitude>' +
+                          '<onlineStatus>Online</onlineStatus>' +
+                          '<password>1234</password>' +
+                          '<qosProfileId>L200</qosProfileId>' +
+                          '<qosProfileName>100/100</qosProfileName>' +
+                        '</customerInfo>' +
+                        '<deviceInfo />' +
+                        '<dslInfo />' +
+                        '<fttxInfo />' +
+                        '<onlineInfo>' +
+                          '<acctInputOctets>1291460452</acctInputOctets>' +
+                          '<acctInputPackets>4101338</acctInputPackets>' +
+                          '<acctInterimTime>1474-02-11 17:31:28.185838</acctInterimTime>' +
+                          '<acctOutputOctets>2155400923</acctOutputOctets>' +
+                          '<acctOutputPackets>3799656</acctOutputPackets>' +
+                          '<acctSessionId>FBB_TTC04201300000000d63ff0010472</acctSessionId>' +
+                          '<acctSessionTime>687600</acctSessionTime>' +
+                          '<acctStartTime>1474-02-03 18:31:41.354217</acctStartTime>' +
+                          '<acctStatusType>3</acctStatusType>' +
+                          '<acctTerminationCause>0</acctTerminationCause>' +
+                          '<callingStationId>fc:4d:d4:f4:65:62</callingStationId>' +
+                          '<customerId>8850002795</customerId>' +
+                          '<framedIpAddress>10.104.146.81</framedIpAddress>' +
+                          '<nasId>FBB_TTC_BRAS</nasId>' +
+                          '<nasIpAddress>10.104.140.70</nasIpAddress>' +
+                          '<nasPortId>FBB_TTC_BRAS eth 0/4/2/1:3000</nasPortId>' +
+                          '<onlineCause>SUCCESS</onlineCause>' +
+                        '</onlineInfo>' +
+                        '<wifiInfo />' +
+                      '</return>' +
+                    '</ns2:queryByIpAddressResponse>' +
+                  '</soap:Body>' +
+                '</soap:Envelope>'
 
-    let ret = '<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ws="http://ws.fbb.ais.co.th/"><soap:Header/><soap:Body><ws:queryByIpAddress><ipAddress>100.86.226.135</ipAddress><refId>20200331122203388O186LuuP2P</refId></ws:queryByIpAddress></soap:Body></soap:Envelope>|REQUEST_HEADERS|{"Content-Length":279,"Content-Type":"application/soap+xml; charset=UTF-8"}|RESPONSE_PARAMS|<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope"><soap:Body><ns2:queryByIpAddressResponse xmlns:ns2="http://ws.fbb.ais.co.th/"><return><customerInfo><customerId>8801813749</customerId></customerInfo><deviceInfo/><dslInfo/><fttxInfo/><onlineInfo><acctInputGigawords>0</acctInputGigawords><acctInputOctets>0</acctInputOctets><acctInterimTime>2020-03-31 12:21:52.103559</acctInterimTime><acctOutputGigawords>0</acctOutputGigawords><acctOutputOctets>0</acctOutputOctets><acctSessionId>FBB_SIN01201270700000422f33001e06</acctSessionId><acctSessionTime>0</acctSessionTime><acctStartTime>2020-03-31 12:21:52.103559</acctStartTime><acctStatusType>1</acctStatusType><acctTerminationCause>0</acctTerminationCause><authStartTime>2020-03-31 12:21:52.034451</authStartTime><callingStationId>c0:fd:84:bf:58:d9</callingStationId><customerId>8801813749</customerId><framedIpAddress>100.86.226.135</framedIpAddress><nasId>FBB_SINKO_MSER01H</nasId><nasIpAddress>10.154.4.23</nasIpAddress><nasPortId>OS_SUTNM_ZZ_01ZT 1/1/3:10.2707 25/ZTEGC4D0254E</nasPortId><onlineCause>SUCCESS</onlineCause><service>INTERNET</service><userId>8801813749</userId></onlineInfo><wifiInfo/></return></ns2:queryByIpAddressResponse></soap:Body></soap:Envelope>'
+    // let ret = '<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:ws="http://ws.fbb.ais.co.th/"><soap:Header/><soap:Body><ws:queryByIpAddress><ipAddress>100.86.226.135</ipAddress><refId>20200331122203388O186LuuP2P</refId></ws:queryByIpAddress></soap:Body></soap:Envelope>|REQUEST_HEADERS|{"Content-Length":279,"Content-Type":"application/soap+xml; charset=UTF-8"}|RESPONSE_PARAMS|<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope"><soap:Body><ns2:queryByIpAddressResponse xmlns:ns2="http://ws.fbb.ais.co.th/"><return><customerInfo><customerId>8801813749</customerId></customerInfo><deviceInfo/><dslInfo/><fttxInfo/><onlineInfo><acctInputGigawords>0</acctInputGigawords><acctInputOctets>0</acctInputOctets><acctInterimTime>2020-03-31 12:21:52.103559</acctInterimTime><acctOutputGigawords>0</acctOutputGigawords><acctOutputOctets>0</acctOutputOctets><acctSessionId>FBB_SIN01201270700000422f33001e06</acctSessionId><acctSessionTime>0</acctSessionTime><acctStartTime>2020-03-31 12:21:52.103559</acctStartTime><acctStatusType>1</acctStatusType><acctTerminationCause>0</acctTerminationCause><authStartTime>2020-03-31 12:21:52.034451</authStartTime><callingStationId>c0:fd:84:bf:58:d9</callingStationId><customerId>8801813749</customerId><framedIpAddress>100.86.226.135</framedIpAddress><nasId>FBB_SINKO_MSER01H</nasId><nasIpAddress>10.154.4.23</nasIpAddress><nasPortId>OS_SUTNM_ZZ_01ZT 1/1/3:10.2707 25/ZTEGC4D0254E</nasPortId><onlineCause>SUCCESS</onlineCause><service>INTERNET</service><userId>8801813749</userId></onlineInfo><wifiInfo/></return></ns2:queryByIpAddressResponse></soap:Body></soap:Envelope>'
 
     // var ret = {
     //   Body: {
