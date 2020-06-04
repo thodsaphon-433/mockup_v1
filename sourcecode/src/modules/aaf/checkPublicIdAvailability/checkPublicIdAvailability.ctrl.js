@@ -54,6 +54,7 @@ exports.checkPublicIdAvailability = function (req, res) {
 
     const ret = {
       "resultCode": "40301",
+      // "resultCode": "20000",
       // "resultCode": "40310",
       "developerMessage": "Success",
       "uid": "1233554848546348",

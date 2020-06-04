@@ -54,6 +54,7 @@ exports.registerServiceId = function (req, res) {
 
     const ret = {
       resultCode: '20000',
+      // resultCode: '50000',
       developerMessage: 'success',
       privateId: 'zvwY6hEbL5BREEp5bgi8vAgQvtgp8NaJ'
     }
