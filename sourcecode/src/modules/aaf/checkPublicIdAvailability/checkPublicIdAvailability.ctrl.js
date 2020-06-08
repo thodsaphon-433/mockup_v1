@@ -58,7 +58,7 @@ exports.checkPublicIdAvailability = function (req, res) {
       // "resultCode": "40310",
       "developerMessage": "Success",
       "uid": "1233554848546348",
-      "privateId": "kkkdiojkolksjfpwiojpoiyhsiod@ais.co.th",
+      "privateId": "4XckSIDFPoaoozS1HDJHZifjAFiqyyp51129637490148@ais.co.th",
       "isFirstRegistration": true
     }
     res.req = req
