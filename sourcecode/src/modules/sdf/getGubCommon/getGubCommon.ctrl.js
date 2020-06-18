@@ -54,7 +54,7 @@ exports.getGubCommon = function (req, res) {
 
     const ret = {
       'resultCode': '20000',
-      'resultDescription': '555',
+      'resultDescription': 'success',
       'gupSubProfile': [{
         'dn': 'msisdn=66123456789,subdata=profile,ds=gup,subdata=services,uid=$UID, ds=SUBSCRIBER,o=AIS,dc=C-NTDB',
         'msisdn': '66123456789',
