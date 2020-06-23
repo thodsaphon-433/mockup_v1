@@ -11,6 +11,7 @@
   "dependencies": {
     "bluebird": "^3.5.3",
     "body-parser": "^1.18.3",
+    "byte": "^2.0.0",
     "commonlog-kb": "1.4.3",
     "date-and-time": "^0.6.3",
     "express": "^4.16.4",
