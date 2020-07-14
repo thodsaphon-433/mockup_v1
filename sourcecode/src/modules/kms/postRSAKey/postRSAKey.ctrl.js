@@ -12,10 +12,16 @@ exports.postRSAKey = function (req, res) {
   const appLog = req.logkb
   const body = req.body
 
-  const conf = {
-    nodeName: 'mockup',
-    cmd: 'postRSAKey',
-    requ: 'CLIENT'
+  const conf = {}
+
+  if (req.query.app_name && req.query.kid) {
+    conf.nodeName = 'mockup'
+    conf.cmd = 'deleteRSAKey'
+    conf.requ = 'CLIENT'
+  } else {
+    conf.nodeName = 'mockup'
+    conf.cmd = 'postRSAKey'
+    conf.requ = 'CLIENT'
   }
 
   // [INIT SESSION]
@@ -69,6 +75,15 @@ exports.postRSAKey = function (req, res) {
         'X-Rtid': req.headers['x-rtid']
       }
     )
+
+    if (req.query.app_name && req.query.kid) {
+      const ret = {
+        resultCode: "20000",
+        developerMessage: "Success"
+      }
+
+      return httpResponse(res, constResultCode[20000], conf.node, conf.cmd, ret, summary, detail)
+    }
     return httpResponse(res, constResultCode[20000], conf.node, conf.cmd, ret, summary, detail)
   } catch (error) {
     if (typeof error.code === 'string') {
