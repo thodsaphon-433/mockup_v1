@@ -29,6 +29,8 @@
 		"fbbidOTP": ["/v3.2/user/contact-number"],
 		"contactNumber": ["/api/v2/aaf/contactNumber/:idType/:idValue.json"],
 		"subscriptionsProfile": ["/api/v3/aaf/subscriptionsProfile/:id_type/:id_value.json"],
-		"privacy": ["/cim/v1/privacy.json"]
+		"privacy": ["/cim/v1/privacy.json"],
+		"getGubImpu": ["/v1/subscriber/:key_name/:key_value/subdata/profile/publicId/:public_id.json"],
+		"getSubscriberProfile": ["/v1/customer/:key_name/:key_value.json"]
 	}
 }
