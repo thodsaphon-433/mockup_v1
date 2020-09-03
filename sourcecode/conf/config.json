@@ -27,6 +27,7 @@
 		"sendOneTimePassword": ["/api/v1/gsso/sendOneTimePW.json"],
 		"confirmOneTimePassword": ["/api/v1/gsso/confirmOneTimePassword.json"],
 		"fbbidOTP": ["/v3.2/user/contact-number"],
-		"contactNumber": ["/api/v2/aaf/contactNumber/:idType/:idValue.json"]
+		"contactNumber": ["/api/v2/aaf/contactNumber/:idType/:idValue.json"],
+		"subscriptionsProfile": ["/api/v3/aaf/subscriptionsProfile/:id_type/:id_value.json"]
 	}
 }

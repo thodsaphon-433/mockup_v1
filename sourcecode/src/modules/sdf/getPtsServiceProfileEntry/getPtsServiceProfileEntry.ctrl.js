@@ -130,7 +130,7 @@ exports.getPtsServiceProfileEntry = function (req, res) {
     appLog.stat(stat.retResSuc(conf.cmd))
     res.header('X-Session-Id', req.headers['x-session-id'])
     // setTimeout(() => {
-      return httpResponse(res, constResultCode[20000], conf.node, conf.cmd, ret, summary, detail)
+    return httpResponse(res, constResultCode[20000], conf.node, conf.cmd, ret, summary, detail)
     // }, 5000)
   } catch (error) {
     if (typeof error.code === 'string') {

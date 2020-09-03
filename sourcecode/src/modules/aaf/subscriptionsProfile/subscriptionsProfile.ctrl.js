@@ -7,14 +7,14 @@ const stat = require('../../../constants/stat.const')
 // const appconf = require('../../../conf/config.json').app
 const genUtil = require('../../../utils/genUtil')
 
-exports.checkPublicIdAvailability = function (req, res) {
+exports.subscriptionsProfile = function (req, res) {
   /**  ========================== [START VALIABLE] ========================== */
   const appLog = req.logkb
   const body = req.body
 
   const conf = {
     nodeName: 'mockup',
-    cmd: 'checkPublicIdAvailability',
+    cmd: 'subscriptionsProfile',
     requ: 'CLIENT'
   }
 
@@ -24,7 +24,7 @@ exports.checkPublicIdAvailability = function (req, res) {
   /**  ========================== [END VALIABLE] ========================== */
 
   /**  ========================== [START LOG] ========================== */
-  appLog.info('==========> checkPublicIdAvailability proccessing <==========')
+  appLog.info('==========> subscriptionsProfile proccessing <==========')
   // const identity = `${Xsession}:${Xrtid}:${Xtid}`
   const session = `${Xsession}:${Xrtid}:`
   const summary = logg.summary(session, '', conf.cmd, '')
@@ -53,13 +53,10 @@ exports.checkPublicIdAvailability = function (req, res) {
     appLog.debug('raw headers : ', JSON.stringify(req.rawHeaders))
 
     const ret = {
-      // "resultCode": "40301",
-      "resultCode": "20000",
-      // "resultCode": "40310",
-      "developerMessage": "Success",
-      "uid": "1233554848546348",
-      "privateId": "4XckSIDFPoaoozS1HDJHZifjAFiqyyp51129637490148@ais.co.th",
-      "isFirstRegistration": true
+      "resultCode":"20000",
+      "developerMessage":"Success",
+      "privateId": "xeROtl/KAf22f07jHLiOGRL8Yb1BRPlDRbhb/1CBMTb/uh39BfCGj+jG5ZuNs4DbQTLYxWNqIVionEgF0xjfJWFYu8iVWYmQS0Lyy4hRweY="
+   
     }
     res.req = req
     appLog.stat(stat.retResSuc(conf.cmd))
