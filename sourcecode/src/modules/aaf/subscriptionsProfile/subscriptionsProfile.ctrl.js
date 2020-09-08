@@ -53,10 +53,10 @@ exports.subscriptionsProfile = function (req, res) {
     appLog.debug('raw headers : ', JSON.stringify(req.rawHeaders))
 
     const ret = {
-      "resultCode":"20000",
-      "developerMessage":"Success",
-      "privateId": "xeROtl/KAf22f07jHLiOGRL8Yb1BRPlDRbhb/1CBMTb/uh39BfCGj+jG5ZuNs4DbQTLYxWNqIVionEgF0xjfJWFYu8iVWYmQS0Lyy4hRweY="
-   
+      "resultCode": "20000",
+      "developerMessage": "Success",
+      "privateId": "xeROtl/KAf22f07jHLiOGRL8Yb1BRPlDRbhb/1CBMTb/uh39BfCGj+jG5ZuNs4DbQTLYxWNqIVionEgF0xjfJWFYu8iVWYmQS0Lyy4hRweY=",
+      "uid": 'uid'
     }
     res.req = req
     appLog.stat(stat.retResSuc(conf.cmd))

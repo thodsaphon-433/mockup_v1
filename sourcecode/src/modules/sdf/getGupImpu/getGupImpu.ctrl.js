@@ -7,14 +7,14 @@ const stat = require('../../../constants/stat.const')
 // const appconf = require('../../../conf/config.json').app
 // const genUtil = require('../../utils/genUtil')
 
-exports.getGubImpu = function (req, res) {
+exports.getGupImpu = function (req, res) {
   /**  ========================== [START VALIABLE] ========================== */
   const appLog = req.logkb
   const body = req.body
 
   const conf = {
     nodeName: 'mockup',
-    cmd: 'getGubImpu',
+    cmd: 'getGupImpu',
     requ: 'CLIENT'
   }
 
@@ -24,7 +24,7 @@ exports.getGubImpu = function (req, res) {
   /**  ========================== [END VALIABLE] ========================== */
 
   /**  ========================== [START LOG] ========================== */
-  appLog.info('==========> getGubImpu proccessing <==========')
+  appLog.info('==========> getGupImpu proccessing <==========')
   // const identity = `${Xsession}:${Xrtid}:${Xtid}`
   const session = `${Xsession}:${Xrtid}:`
   const summary = logg.summary(session, '', conf.cmd, '')

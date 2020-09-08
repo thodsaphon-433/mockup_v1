@@ -61,7 +61,7 @@ exports.getPrivacyInfo = function (req, res) {
         "conditionName": "MDP",
         "conditionType": "TC",
         "conditionURL": "https://googlemdp.ais.co.th/ais-google/mobiledataplan-service",
-        "conditionVersion": "1.0",
+        "conditionVersion": "0.1",
         "consentPermission": "",
         "createdBy": "MDP",
         "createdDate": "20200401140000+0700",
@@ -74,7 +74,7 @@ exports.getPrivacyInfo = function (req, res) {
         "uid": "661540507899260"
       }]
     }
-    
+
     res.req = req
     appLog.stat(stat.retResSuc(conf.cmd))
     res.set(

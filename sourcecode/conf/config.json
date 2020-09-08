@@ -1,36 +1,113 @@
 {
-  "routing": {
-		"message":["/message", "/mockup"],
-		"callAPIOut":["/order/v1/orders/:orderId/receiveorder/:receiveorderId", "/ExternalAPI/V3/:supplierId/order/V1/orders/:orderId/receiveorder/:receiveorderId"],
-		"sacfSessionProfile":["/v1/configuration/o/nss/o/sacf/sacfXsessionId/:sacfXsessionId.json"],
-		"deliver":["/deliver", "/ExternalAPI/V3/:supplierId/deliver/V1/delivers/order/:orderId/receiveorder/:receiveorderId"],
-		"decryptPSPid":["/scf/v2/partnerSpecificPrivateId/:urlEncoding*.json"],
-		"decrypt":["/scf/v2/clientIds/:urlEncoding*.json"],
-		"acrfbb":["/aaf/v1.4.4/authenticatePublicId/email/:email.json"],
-		"acrmsisdn":["/aaf/v1.4.4/authenticatePublicId/e164/:e164.json"],
-		"loginByB2C":["/scf/v2/loginByB2C.json"],
-		"attach":["/scf/v2/attach.json"],
-		"obtainAuthorityList":["/scf/v2/obtainAuthorityList.json"],
-		"registerServiceId":["/aaf/v1.4.4/subscriptions/:idType/:idValue.json", "/aaf/v1.4.4/subscriptions/:idType/:idValue/:uid.json"],
-		"dhcp":["/FBBRadiusProvisioingV1.6/services/FBBRadiusServicePort"],
-		"validateToken":["/scf/v2/validateToken.json"],
-		"pushNotificationInfo": ["/api/v1/aaf/pushNotificationInfo.json"],
-		"getPtsAppProfileEntry": ["/v1/pts/partnerId/:partnerId/ds/Service/ptsAppName/:ptsAppName.json"],
-		"getPtsServiceProfileEntry": ["/v1/pts/partnerId/:partner_id/ds/Service/ptsAppKeyName/:pts_app_key_name.json"],
-		"getPtsPartnerProfile": ["/v1/pts/partnerId/:partner_id/ds/Profile.json"],
-		"getGubCommon": ["/v1/subscriber/privateId/:privateId.json"],
-		"checkPublicIdAvailability": ["/api/v2/aaf/checkPublicIdAvailability/:id_type/:id_value.json"],
-		"checkPublicIdAvailabilityV3": ["/api/v3/aaf/checkPublicIdAvailability/:idType/:idValue.json"],
-		"postRSAKey": ["/kms/v3/partners/AIS/rsakey"],
-		"redirect": ["/api/oauth/callback"],
-		"eligibleService": ["/api/v2/aaf/eligibleService.json"],
-		"sendOneTimePassword": ["/api/v1/gsso/sendOneTimePW.json"],
-		"confirmOneTimePassword": ["/api/v1/gsso/confirmOneTimePassword.json"],
-		"fbbidOTP": ["/v3.2/user/contact-number"],
-		"contactNumber": ["/api/v2/aaf/contactNumber/:idType/:idValue.json"],
-		"subscriptionsProfile": ["/api/v3/aaf/subscriptionsProfile/:id_type/:id_value.json"],
-		"privacy": ["/cim/v1/privacy.json"],
-		"getGubImpu": ["/v1/subscriber/:key_name/:key_value/subdata/profile/publicId/:public_id.json"],
-		"getSubscriberProfile": ["/v1/customer/:key_name/:key_value.json"]
+	"routing": {
+		"message": [
+			"/message",
+			"/mockup"
+		],
+		"callAPIOut": [
+			"/order/v1/orders/:orderId/receiveorder/:receiveorderId",
+			"/ExternalAPI/V3/:supplierId/order/V1/orders/:orderId/receiveorder/:receiveorderId"
+		],
+		"sacfSessionProfile": [
+			"/v1/configuration/o/nss/o/sacf/sacfXsessionId/:sacfXsessionId.json"
+		],
+		"deliver": [
+			"/deliver",
+			"/ExternalAPI/V3/:supplierId/deliver/V1/delivers/order/:orderId/receiveorder/:receiveorderId"
+		],
+		"decryptPSPid": [
+			"/scf/v2/partnerSpecificPrivateId/:urlEncoding*.json"
+		],
+		"decrypt": [
+			"/scf/v2/clientIds/:urlEncoding*.json"
+		],
+		"acrfbb": [
+			"/aaf/v1.4.4/authenticatePublicId/email/:email.json"
+		],
+		"acrmsisdn": [
+			"/aaf/v1.4.4/authenticatePublicId/e164/:e164.json"
+		],
+		"loginByB2C": [
+			"/scf/v2/loginByB2C.json"
+		],
+		"attach": [
+			"/scf/v2/attach.json"
+		],
+		"obtainAuthorityList": [
+			"/scf/v2/obtainAuthorityList.json"
+		],
+		"registerServiceId": [
+			"/aaf/v1.4.4/subscriptions/:idType/:idValue.json",
+			"/aaf/v1.4.4/subscriptions/:idType/:idValue/:uid.json"
+		],
+		"dhcp": [
+			"/FBBRadiusProvisioingV1.6/services/FBBRadiusServicePort"
+		],
+		"validateToken": [
+			"/scf/v2/validateToken.json"
+		],
+		"pushNotificationInfo": [
+			"/api/v1/aaf/pushNotificationInfo.json"
+		],
+		"getPtsAppProfileEntry": [
+			"/v1/pts/partnerId/:partnerId/ds/Service/ptsAppName/:ptsAppName.json"
+		],
+		"getPtsServiceProfileEntry": [
+			"/v1/pts/partnerId/:partner_id/ds/Service/ptsAppKeyName/:pts_app_key_name.json"
+		],
+		"getPtsPartnerProfile": [
+			"/v1/pts/partnerId/:partner_id/ds/Profile.json"
+		],
+		"getGubCommon": [
+			"/v1/subscriber/privateId/:privateId.json"
+		],
+		"checkPublicIdAvailability": [
+			"/api/v2/aaf/checkPublicIdAvailability/:id_type/:id_value.json"
+		],
+		"checkPublicIdAvailabilityV3": [
+			"/api/v3/aaf/checkPublicIdAvailability/:idType/:idValue.json"
+		],
+		"postRSAKey": [
+			"/kms/v3/partners/AIS/rsakey"
+		],
+		"redirect": [
+			"/api/oauth/callback"
+		],
+		"eligibleService": [
+			"/api/v2/aaf/eligibleService.json"
+		],
+		"sendOneTimePassword": [
+			"/api/v1/gsso/sendOneTimePW.json"
+		],
+		"confirmOneTimePassword": [
+			"/api/v1/gsso/confirmOneTimePassword.json"
+		],
+		"fbbidOTP": [
+			"/v3.2/user/contact-number"
+		],
+		"contactNumber": [
+			"/api/v2/aaf/contactNumber/:idType/:idValue.json"
+		],
+		"subscriptionsProfile": [
+			"/api/v3/aaf/subscriptionsProfile/:id_type/:id_value.json"
+		],
+		"privacy": [
+			"/cim/v1/privacy.json"
+		],
+		"getGupImpu": [
+			"/v1/subscriber/:key_name/:key_value/subdata/profile/publicId/:public_id.json"
+		],
+		"getSubscriberProfile": [
+			"/v1/customer/:key_name/:key_value.json"
+		],
+		"putDeletePrivacy": [
+			"/cim/v1/privacy.json?"
+		],
+		"getPrivacyInfo": [
+			"/cim/v1/privacy.json?"
+		],
+		"postACR": [
+			"/aaf/v3/authenticatePublicId/:id_type/:id_value"
+		]
 	}
 }

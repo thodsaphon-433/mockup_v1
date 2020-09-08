@@ -53,8 +53,8 @@ exports.checkPublicIdAvailabilityV3 = function (req, res) {
     appLog.debug('raw headers : ', JSON.stringify(req.rawHeaders))
 
     const ret = {
-      // "resultCode": "40301",
-      "resultCode": "20000",
+      "resultCode": "40301",
+      // "resultCode": "20000",
       // "resultCode": "40310",
       "developerMessage": "Success",
       "uid": "1233554848546348",
@@ -69,7 +69,7 @@ exports.checkPublicIdAvailabilityV3 = function (req, res) {
         'X-Session-Id': req.headers['x-session-id']
       }
     )
-    return httpResponse(res, constResultCode[20000], conf.node, conf.cmd, ret, summary, detail)
+    return httpResponse(res, constResultCode[40301], conf.node, conf.cmd, ret, summary, detail)
   } catch (error) {
     if (typeof error.code === 'string') {
       appLog.warn('[messageCtrl.messages] Catch: HANDLE ERROR')
