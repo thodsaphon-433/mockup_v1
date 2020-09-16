@@ -53,7 +53,7 @@ exports.putDeletePrivacy = function (req, res) {
     appLog.debug('raw headers : ', JSON.stringify(req.rawHeaders))
 
     const ret = {
-      // "resultCode": "40301",
+      // "resultCode": "40401",
       "resultCode": "20000",
       // "resultCode": "40310",
       "developerMessage": "Success",

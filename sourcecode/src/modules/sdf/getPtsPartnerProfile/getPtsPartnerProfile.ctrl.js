@@ -51,6 +51,7 @@ exports.getPtsPartnerProfile = function (req, res) {
     appLog.stat(stat.recvReq(conf.cmd))
     // appLog.debug('receive deliverStatus from url : ===> ', body.callBackUrl)
     appLog.debug('raw headers : ', JSON.stringify(req.rawHeaders))
+    console.log(`req.query: ${JSON.stringify(req.query)}`);
 
     const ret = {
       resultCode: "20000",
@@ -74,8 +75,8 @@ exports.getPtsPartnerProfile = function (req, res) {
           ptsInitialVector: "$ptsInitialVector",
           ptsSecret: "$ptsSecret",
           ptsPrivateKey: "$ptsPrivateKey",
-          ptsMaxAuthCodeTime: "$ptsMaxAuthCodeTime",
-          ptsMaxAccessTokenTime: "$ptsMaxAccessTokenTime",
+          ptsMaxAuthCodeTime: "50000",
+          ptsMaxAccessTokenTime: "50000",
           ptsFirstExpireIn: "$ptsFirstExpireIn",
           ptsExpireIn: "$ptsExpireIn",
           ptsAccessTokenIntervalType: "$ptsAccessTokenIntervalType",
@@ -123,7 +124,7 @@ exports.getPtsPartnerProfile = function (req, res) {
     appLog.stat(stat.retResSuc(conf.cmd))
     res.header('X-Session-Id', req.headers['x-session-id'])
     // setTimeout(() => {
-      return httpResponse(res, constResultCode[20000], conf.node, conf.cmd, ret, summary, detail)
+    return httpResponse(res, constResultCode[20000], conf.node, conf.cmd, ret, summary, detail)
     // }, 5000)
   } catch (error) {
     if (typeof error.code === 'string') {

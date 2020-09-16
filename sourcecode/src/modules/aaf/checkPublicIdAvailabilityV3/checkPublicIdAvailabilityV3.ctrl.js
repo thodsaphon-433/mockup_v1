@@ -59,8 +59,7 @@ exports.checkPublicIdAvailabilityV3 = function (req, res) {
       "developerMessage": "Success",
       "uid": "1233554848546348",
       "privateId": "4XckSIDFPoaoozS1HDJHZifjAFiqyyp51129637490148@ais.co.th",
-      "isFirstRegistration": true,
-      "isFirstRegistration": true
+      "isFirstRegistration": "true"
     }
     res.req = req
     appLog.stat(stat.retResSuc(conf.cmd))

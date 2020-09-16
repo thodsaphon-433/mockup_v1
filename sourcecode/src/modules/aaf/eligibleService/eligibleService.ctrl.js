@@ -61,7 +61,7 @@ exports.eligibleService = function (req, res) {
       resultCode: "20000",
       developerMessage: "Success"
     };
-    
+
     appLog.stat(stat.retResSuc(conf.cmd))
     res.set(
       {

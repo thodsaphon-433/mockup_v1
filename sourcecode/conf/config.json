@@ -65,7 +65,7 @@
 			"/api/v2/aaf/checkPublicIdAvailability/:id_type/:id_value.json"
 		],
 		"checkPublicIdAvailabilityV3": [
-			"/api/v3/aaf/checkPublicIdAvailability/:idType/:idValue.json"
+			"/api/v3/aaf/checkPublicIdAvailability/:idType/:idValue"
 		],
 		"postRSAKey": [
 			"/kms/v3/partners/AIS/rsakey"
@@ -89,7 +89,7 @@
 			"/api/v2/aaf/contactNumber/:idType/:idValue.json"
 		],
 		"subscriptionsProfile": [
-			"/api/v3/aaf/subscriptionsProfile/:id_type/:id_value.json"
+			"/api/v3/aaf/subscriptionsProfile/:id_type/:id_value"
 		],
 		"privacy": [
 			"/cim/v1/privacy.json"
