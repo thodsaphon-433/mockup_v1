@@ -55,15 +55,16 @@ exports.getSubscriberProfile = function (req, res) {
       "subscriberProfile": [{
         "dn": "subdata=common,subdata=profile,uid=661242435282644,ds=SUBSCRIBER,o=AIS,DC=C-NTDB",
         "subdata": "common",
-        "givenName": "Somchai",
-        "surname": "Banna",
+        "givenName": Buffer.from("Somchai").toString('base64'),
+        "surname": Buffer.from("คนไทย").toString('base64'),
         "objectClass": "subscriberProfile",
         "pfUsername": "somsri422r",
         "pfPassword": "422RsomSri",
         "loginPassword": "somsri1234",
         "prepaidFlag": "FALSE",
         "roamingAllowed": "TRUE",
-        "nameTitle": "Miss"
+        "nameTitle": "Miss",
+        'animal': Buffer.from("นกอ้วน").toString('base64')
       }]
     }
     appLog.stat(stat.retResSuc(conf.cmd))
